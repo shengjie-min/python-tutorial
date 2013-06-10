@@ -25,15 +25,19 @@ celery = Celery('proj.celery_worker_server',
                 include=['celery_tasks'])
 
 if __name__ == '__main__':
-    ''' run command:
-        python celery_worker_server.py worker -l info
-            to start worker server
-        python celery_work_server.py worker -B -l info
-            to start both worker and beat
-        python celery_work_server.py beat -l info
-            only starts beat
-        python celery_work_server.py beat -l info -P eventlet -c 1000
-            use eventlet as the backend execution pool with 1000 concurrency
-        
+    ''' 
+    Commands:
+
+    1. python celery_worker_server.py worker -l info
+        to start worker server
+    2. python celery_work_server.py worker -B -l info
+        to start both worker and beat
+    3. python celery_work_server.py beat -l info
+        only starts beat
+    4. python celery_work_server.py beat -l info -P eventlet -c 1000
+        use eventlet as the backend execution pool with 1000 concurrency
+
+        By default multiprocessing is used to perform concurrent execution
+        of tasks, but you can also use Eventlet.
     '''
     celery.start()

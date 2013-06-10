@@ -5,7 +5,6 @@ Created on May 15, 2013
 '''
 
 import re
-from test.test_iterlen import len
 
 
 sample_filters = []

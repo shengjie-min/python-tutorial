@@ -32,5 +32,8 @@ if __name__ == '__main__':
             to start both worker and beat
         python celery_work_server.py beat -l info
             only starts beat
+        python celery_work_server.py beat -l info -P eventlet -c 1000
+            use eventlet as the backend execution pool with 1000 concurrency
+        
     '''
     celery.start()

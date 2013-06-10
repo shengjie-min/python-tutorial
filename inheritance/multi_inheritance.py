@@ -40,8 +40,17 @@ class KidHasBothParents(Father, Mother):
     def __init__(self):
         print "[KidHasBothParents Object says: ] I am the kidhasbothparents"
 
+class KidHasLikeMother(Father, Mother):
+    print "[KidHasLikeMother class says: ] I am the KidHasLikeMother"
+    def __init__(self):
+        super.__init__(Mother)
+        print "[KidHasLikeMother Object says: ] I am the KidHasLikeMother"
+
 KidHasFather().try_this()
 print "=================="
 KidHasBothParents().try_this()
+print "=================="
+KidHasLikeMother().try_this()
+
 
 
